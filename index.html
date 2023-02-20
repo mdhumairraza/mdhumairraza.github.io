@@ -1,709 +1,1799 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md Humair Raza Portfolio</title>
-    <link rel="icon" href="image//profilepic2.jpg">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/6f3f4b23f1.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js" class="react-activity-calendar" ></script>
-    <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"/>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/images/5.jpg" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <title>Md Humair Raza - Portfolio</title>
 
+    <style>
+      @import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
+      @font-face {
+        font-family: steelbase;
+        src: url(steelbase.woff2) format("woff2"),
+          url(steelbase.woff) format("woff");
+      }
+      :root {
+        --primary-color: #9acd32;
+        --primary-hover: #ff8c00;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body,
+      html {
+        font-family: Poppins, sans-serif;
+        width: 100%;
+        min-height: 100%;
+        cursor: url(images/cursor2.jpg), auto;
+        scroll-behavior: auto;
+      }
+      #root {
+        height: 100%;
+      }
+      .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 20px;
+      }
+      a {
+        text-decoration: none;
+        color: #000;
+        cursor: url(images/cursor1.png), auto;
+        transition: all 0.3s ease;
+      }
+      a:hover {
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .button_style1 {
+        border: 0;
+        color: var(--primary-color);
+        background-color: #fff;
+        padding: 0 20px;
+        border-radius: 50px;
+        text-transform: uppercase;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        text-align: center;
+        font-family: inherit;
+        width: 170px;
+        height: 50px;
+      }
+      input[type="email"],
+      input[type="number"],
+      input[type="text"] {
+        height: 40px;
+        padding: 10px 10px;
+        font-family: Poppins;
+        border: 0;
+        border-bottom: 2px solid #fff;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 300;
+        background-color: transparent;
+        color: #fff;
+      }
+      input[type="submit"] {
+        background-color: #fff;
+        color: clue;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #fff;
+        transform: scale(0.97);
+      }
+      input[type="email"]::placeholder,
+      input[type="number"]::placeholder,
+      input[type="text"]::placeholder {
+        color: #fff;
+        opacity: 1;
+      }
+      select {
+        height: 60px;
+        padding-left: 15px;
+        font-family: Poppins;
+        border: 1px solid #aaa;
+        border-radius: 8px;
+        width: 70%;
+        font-size: 20px;
+        font-weight: 300;
+        color: rgb(0, 0, 0, 0.6);
+      }
+      input[type="email"]:focus,
+      input[type="number"]:focus,
+      input[type="text"]:focus {
+        outline: 0;
+        border-bottom: 2px solid var(--primary-color);
+      }
+      .heading {
+        font-size: 75px;
+        font-weight: 600;
+        line-height: 75px;
+      }
+      .works_sub_heading {
+        font-size: 50px;
+        font-weight: 300;
+        line-height: 90px;
+      }
+      header {
+        height: 90px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        background-color: #000;
+        color: #fff;
+        transition: all 0.8s ease;
+      }
+      header .logo {
+        background-color: #000;
+        color: #fff;
+        transition: all 0.3s ease;
+        font-family: Steelbase;
+      }
+      header .logo:hover {
+        transform: rotate(360deg);
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotate(0);
+        }
+        20% {
+          transform: rotate(360deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      header nav {
+        display: flex;
+        justify-content: space-around;
+        flex: 1;
+        max-width: 500px;
+      }
+      header nav a {
+        font-size: 18px;
+        font-weight: 500;
+        color: #fff;
+        text-transform: uppercase;
+      }
+      header nav .letter-o {
+        display: inline-block;
+        margin: 0 1px;
+        width: 13px;
+        height: 13px;
+        border: 2px solid #fff;
+        border-radius: 17px;
+        transition: 0.3s all cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      header nav a:hover .letter-o {
+        width: 40px;
+        margin: 0 2px;
+      }
+      header .resume_button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+      }
+      header .resume_button:hover {
+        background-color: var(--primary-hover);
+        transform: scale(0.98);
+      }
+      header a img {
+        height: 20px;
+        filter: invert(1);
+      }
+      header .resume_button {
+        padding: 15px 30px;
+        letter-spacing: 1px;
+        font-size: 15px;
+        font-weight: 500;
+        background-color: var(--primary-color);
+        color: #fff;
+      }
+      header .hamburger {
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        display: none;
+      }
+      header .hamburger div {
+        width: 60px;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+      }
+      .hero_section {
+        background-color: #000;
+        color: #fff;
+        overflow: hidden;
+        max-height: calc(100vh - 70px);
+        position: relative;
+        transition: filter 0.8s ease;
+      }
+      .hero_section .background_image {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        object-fit: cover;
+        transform: translateY(800px);
+        animation: moveimage 15s ease forwards;
+        opacity: 10%;
+      }
+      @keyframes moveimage {
+        100% {
+          transform: translateY(-900px);
+        }
+      }
+      .hero_section .container {
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+      .hero_section .container .left_section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 30px;
+        height: calc(100vh - 70px);
+      }
+      .hero_section .container .left_section .heading {
+        font-size: 50px;
+        font-weight: 600;
+        line-height: 90px;
+        transform: translateY(100px);
+        opacity: 0;
+        transition: all 1.5s ease;
+        will-change: transform, opacity;
+      }
+      .hero_section .container .left_section .sub_heading {
+        font-weight: 200;
+        font-size: 60px;
+        line-height: 80px;
+        color: rgba(255, 255, 255, 0.6);
+        transform: translateY(100px);
+        opacity: 0;
+        transition: all 1.5s ease 1s;
+        will-change: transform, opacity;
+        width: 70%;
+      }
+      .hero_section .container .left_section .profile_section img {
+        width: 150px;
+        height: 150px;
+        border-radius: 150px;
+        display: none;
+      }
+      .hero_section .container .hover_icon {
+        height: 45px;
+        filter: invert(1);
+        position: relative;
+        top: 300px;
+        right: 90px;
+        animation: hoverme 2s ease 3s infinite;
+        margin-left: 250px;
+      }
+      @keyframes hoverme {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+          top: 250px;
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .hero_section .container .linkedin .profile_section {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      .hero_section .container .linkedin .profile_section img {
+        width: 75%;
+        border-radius: 100px;
+        transform: translate(20px, 10px);
+        box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.233);
+        transition: all 0.3s ease;
+      }
+      .hero_section .container .github .profile_section {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      .hero_section .container .github .profile_section img {
+        width: 75%;
+        border-radius: 100px;
+        transform: translate(-20px, -20px);
+        box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.233);
+        opacity: 1;
+        transition: all 0.3s ease;
+      }
+      .hero_section .container .linkedin {
+        max-width: 250px;
+        min-width: 250px;
+        height: 500px;
+        position: absolute;
+        right: 60px;
+        transform: translateY(-40px);
+        width: 100%;
+        flex-basis: 50%;
+        background-color: #0a66c2;
+        transform-origin: top left;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        border-radius: 20px;
+        clip-path: polygon(0 0, 100% 0, 100% 45%, 0 64%);
+      }
+      .hero_section .container .github {
+        max-width: 250px;
+        min-width: 250px;
+        height: 500px;
+        right: 20px;
+        position: absolute;
+        width: 100%;
+        flex-basis: 50%;
+        background-color: #14d8d1;
+        transform-origin: bottom right;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        border-radius: 20px;
+        clip-path: polygon(0 55%, 100% 36%, 100% 100%, 0 100%);
+      }
+      .hero_section .container .linkedin .tag {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        transform: rotate(-90deg);
+        position: relative;
+        left: -90px;
+        top: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 20px;
+        transition: all 0.3s ease;
+      }
+      .hero_section .container .github .tag {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        transform: rotate(-90deg);
+        position: relative;
+        right: -90px;
+        top: 330px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 20px;
+        transition: all 0.3s ease;
+      }
+      .hero_section .container .tag img {
+        height: 20px;
+        filter: invert(1);
+      }
+      .hero_section .container .github > img {
+        position: absolute;
+        top: 200px;
+        object-fit: cover;
+        transition: all 0.3s ease;
+      }
+      .hero_section .container .linkedin > img {
+        position: absolute;
+        top: -100px;
+        object-fit: cover;
+        transition: all 0.3s ease;
+      }
+      .hero_section .container .github .stats_section {
+        width: 100%;
+        background-color: #fff;
+        color: #000;
+        position: absolute;
+        bottom: 0;
+        height: 265px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 120px 30px 30px 30px;
+        gap: 15px;
+        transform: translateY(270px);
+        transition: all 0.3s 0.1s ease;
+        clip-path: polygon(0 35%, 100% 0, 100% 100%, 0 100%);
+        cursor: pointer;
+      }
+      .hero_section .container .github .stats_section .stats {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .hero_section .container .github .stats_section a {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 18px;
+        font-weight: 500;
+      }
+      .hero_section .container .right_section .github .stats_section a img {
+        height: 15px;
+        transform: rotate(180deg);
+      }
+      .hero_section .container .github .stats_section h4 {
+        color: #20ba9f;
+        line-height: 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-weight: 300;
+        margin-bottom: 6px;
+      }
+      .hero_section .container .github .stats_section a img {
+        height: 15px;
+        transform: rotate(180deg);
+      }
+      .hero_section .container .linkedin .stats_section {
+        width: 100%;
+        background-color: #fff;
+        color: #000;
+        position: absolute;
+        bottom: 0;
+        height: 265px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 120px 30px 30px 30px;
+        transform: translateY(270px);
+        transition: all 0.3s 0.1s ease;
+        clip-path: polygon(0 35%, 100% 0, 100% 100%, 0 100%);
+        cursor: pointer;
+      }
+      .hero_section .container .linkedin .stats_section .stats {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .hero_section .container .linkedin .stats_section a {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 18px;
+        font-weight: 500;
+      }
+      .hero_section .container .linkedin .stats_section a img {
+        height: 15px;
+        transform: rotate(180deg);
+      }
+      .hero_section .container .linkedin .stats_section h4 {
+        color: #1976f0;
+        line-height: 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-weight: 300;
+        margin-bottom: 6px;
+      }
+      .hero_section .container .left_section .description {
+        font-size: 17px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.6);
+        width: 50%;
+      }
+      .hero_section .container .left_section .is_visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .blue {
+        color: var(--primary-color);
+      }
+      .c2 {
+        color: var(--primary-hover);
+      }
+      .c3 {
+        color: orangered;
+        font-size: 30px;
+      }
+      .work_section .container {
+        display: flex;
+        gap: 50px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 50px 0;
+      }
+      .work_section h2 {
+        font-size: 60px;
+        font-weight: 600;
+        line-height: 85px;
+        transform: translateY(100px);
+        opacity: 0;
+        width: 80%;
+        margin-top: 30px;
+        transition: all 0.5s ease;
+        will-change: transform, opacity;
+      }
+      .work_section .underline_link::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #000;
+        transition: width 0.5s;
+      }
+      .work_section .underline_link:hover::after {
+        width: 100%;
+        transition: width 0.5s;
+      }
+      .work_section .sub_heading {
+        font-size: 20px;
+        font-weight: 500;
+        width: 50%;
+        line-height: 30px;
+        transform: translateY(100px);
+        opacity: 0;
+        transition: all 0.3s ease;
+        will-change: transform, opacity;
+      }
+      .work_section .is_visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .work_section .works .work {
+        display: flex;
+        width: 900px;
+        height: 600px;
+        background-color: #e9e9e9;
+        border-radius: 20px;
+        border: 10px solid #f5f5f5;
+        overflow: hidden;
+        gap: 1px;
+        margin-bottom: 100px;
+        position: relative;
+      }
+      .work_section .works .work:last-child {
+        margin-bottom: 0;
+      }
+      .work_section .works .work .right_section {
+        flex-basis: 50%;
+        transform: translateY(200px);
+        opacity: 0;
+        transition: all 0.3s ease, transform 0.3s ease 0.1s;
+        overflow: hidden;
+      }
+      .work_section .works .work .right_section img {
+        object-fit: cover;
+        transition: all 0.3s ease;
+        /* width: 100%; */
+      }
+      .work_section .works .work .left_section {
+        flex-basis: 50%;
+        transform: translateY(200px);
+        opacity: 0;
+        transition: all 0.3s ease;
+        background-color: #fff;
+        border-right: 1px solid #dfdfdf;
+        display: flex;
+        align-items: center;
+      }
+      .work_section .works .work .is_visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .work_section .works .work img {
+        width: 100%;
+        object-fit: cover;
+        object-position: top left;
+        height: 100%;
+      }
+      .work_section .work .left_section .content {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 20;
+        width: 350px;
+        align-items: flex-start;
+        text-align: left;
+        gap: 20px;
+        padding: 20px;
+        transition: all 0.3s ease;
+      }
+      .work_section .left_section h3 {
+        font-size: 50px;
+        line-height: 60px;
+        font-weight: 400;
+      }
+      .work_section .left_section .middle {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+      }
+      .works .left_section .middle a {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 500;
+      }
+      .works .left_section .middle a {
+        color: var(--primary-color);
+      }
+      .works .left_section .middle .tags {
+        margin-top: 10px;
+        font-size: 16px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .works .left_section .middle .tags p {
+        color: #fff;
+        border-radius: 50px;
+        padding: 2px 10px;
+        background-color: #346be4;
+        transition: all 0.3s ease;
+      }
+      .works .left_section .middle .tags p:hover {
+        background-color: #2b5abe;
+      }
+      .works .left_section .year {
+        font-size: 25px;
+        font-weight: 300;
+        color: #969696;
+      }
+      .on_the_web_section .container {
+        text-align: center;
+        margin-bottom: 70px;
+      }
+      .on_the_web_section .container h2 {
+        font-size: 85px;
+        font-weight: 600;
+        line-height: 85px;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+      .on_the_web_section .container .icons_section {
+        display: flex;
+        gap: 1px;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 80px;
+        background-color: #e7e7e7;
+      }
+      .on_the_web_section .container .icons_section > a {
+        flex-basis: 20%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0;
+        gap: 15px;
+        background-color: #fff;
+        flex-grow: 1;
+        cursor: pointer;
+      }
+      .on_the_web_section .container .icons_section > a:hover {
+        background-color: #f8f8f8;
+        color: var(--primary-color);
+      }
+      .on_the_web_section .container .icons_section > a div {
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .on_the_web_section .container .icons_section > a h4 {
+        font-weight: 300;
+      }
+      .on_the_web_section .container .icons_section img {
+        height: 30px;
+      }
+      .my_skills_section {
+        padding-bottom: 100px;
+        text-align: center;
+      }
+      .my_skills_section .container h2 {
+        font-size: 85px;
+        font-weight: 600;
+        line-height: 85px;
+        text-align: center;
+        margin-top: 120px;
+        margin-bottom: 10px;
+      }
+      .my_skills_section .container .skills {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-gap: 20px;
+        margin-top: 80px;
+      }
+      .my_skills_section .container .skills div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.123);
+        border-radius: 20px;
+        height: 130px;
+        padding: 15px 0;
+        gap: 10px;
+        font-size: 14px;
+      }
+      .my_skills_section .container .skills div:hover {
+        background-color: #f3f3f3;
+      }
+      .my_skills_section .container .skills h3 {
+        font-weight: 400;
+      }
+      .my_skills_section .container .skills img {
+        max-width: 100px;
+        max-height: 50px;
+        width: auto;
+        height: auto;
+      }
+      footer {
+        padding: 60px 0 0 0;
+        position: relative;
+        z-index: 0;
+        background-color: #000;
+      }
+      footer .container .top_section {
+        display: flex;
+        color: #fff;
+        padding: 60px 20px;
+        gap: 50px;
+      }
+      footer .container a {
+        color: #fff;
+      }
+      footer .container .top_section .left_section {
+        flex-basis: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      footer .container .top_section .left_section a {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      footer .container .top_section .left_section img {
+        filter: invert(1);
+        height: 20px;
+        opacity: 0.5;
+      }
+      footer .container .top_section .right_section form {
+        flex-basis: 60%;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        align-items: flex-start;
+      }
+      footer .container .top_section .right_section form > div h5 {
+        font-size: 28px;
+        font-weight: 300;
+      }
+      footer .container .top_section .right_section form > div h5:nth-child(2) {
+        position: relative;
+        top: -10px;
+      }
+      footer .container .top_section .right_section form input::placeholder {
+        color: #fff;
+      }
+      footer .container .button_style1 {
+        padding: 12px 60px;
+        letter-spacing: 1px;
+        font-size: 20px;
+        font-weight: 500;
+        background-color: var(--primary-color);
+        color: #fff;
+      }
+      footer .container .button_style1:hover {
+        background-color: var(--primary-hover);
+      }
+      footer .bottom_section {
+        color: #fff;
+        display: flex;
+        border-top: 2px solid #1a1a1a;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+      }
+      footer .bottom_section .left {
+        color: #fff;
+        opacity: 0.5;
+      }
+      footer .bottom_section .right {
+        display: flex;
 
-</head>
-<body>
-
-    <div class="header">
-        <div class="progress-container">
-            <div class="progress-bar" id="myBar"></div>
-        </div>
-    </div>
-
-
-    <section class="top-nav"  id="nav-menu" >
-        <div>
-          
-        </div>
-        <input id="menu-toggle" type="checkbox" />
-        <label class='menu-button-container' for="menu-toggle">
-            <div class='menu-button'></div>
-        </label>
-        <ul class="menu">
-          <li><a class="tdn" href="#box1" class="nav-link home">Home</a></li>
-          <li><a class="tdn" href="#box0" class="nav-link about">About</a></li>
-          <li><a class="tdn" href="#box2" class="nav-link skills">Tech Stack</a></li>
-          <li><a class="tdn" href="#box4">My Skills</a></li>
-          <li><a class="tdn" href="#box3" class="nav-link projects">Project</a></li>
-          <li><a class="tdn" href="#box5"  class="nav-link contact">Contact</a></li>
-          <li><a class="tdn" download=""  href="https://drive.google.com/file/d/1ptjAIsk7d0Su-wJimx7ttRnJQ0yEJtfC/view?usp=share_link" class="nav-link resume" id="resume-button-1" id="resume-link-1">Resume</a></li>
-          
-        </ul>
-    
-    </section>
-
-
-
-    <div class="box1" id="box1" id="home" >
-        <div class="box10">
-            <span style="--i:1;"><H1>H</H1></span>
-            <span style="--i:2;"><h1>i</h1></span>
-            <!-- <span style="--i:3;">&nbsp;</span>
-            <span style="--i:4;"><h1>T</h1></span>
-            <span style="--i:5;"><h1>h</h1></span>
-            <span style="--i:6;"><h1>e</h1></span>
-            <span style="--i:7;"><h1>r</h1></span>
-            <span style="--i:8;"><h1>e</h1></span> -->
-            <span style="--i:3;"><h1>!</h1></span>
-            <span style="--i:10">&nbsp;</span>
-            <span style="--i:11;color: #72351C;"><h1>V</h1></span>
-            <span style="--i:12;color: #72351C;"><h1>i</h1></span>
-            <span style="--i:13;color: #72351C;"><h1>s</h1></span>
-            <span style="--i:15;color: #72351C;"><h1>i</h1></span>
-            <span style="--i:16;color: #72351C;"><h1>t</h1></span>
-            <span style="--i:17;color: #72351C;"><h1>o</h1></span>
-            <span style="--i:18;color: #72351C;"><h1>r</h1></span>
-        </div>
-
-        <div class="box11">
-
-            <div class="box111">
-                
-                <h2 class="wlcm_note">Welcome to my portfolio!</h2>
-                
-                <h2 class="some_about" id="user-detail-name">I'm  <span style="color: #72351C;"> Md Humair Raza </span> a passionate Full Stack Web Developer</h2>
-                
-                <div class="btn_div">
-                    <button class="rbtn" id="resume-button-2"><a download="" href="https://drive.google.com/file/d/1ptjAIsk7d0Su-wJimx7ttRnJQ0yEJtfC/view?usp=share_link"   id="resume-link-2">Resume</a></button>
-                </div>
-            
-            </div>
-
-            <div class="box112"  class="home-img">
-                <img src="https://media.licdn.com/dms/image/D4D03AQG7I51fYDYxxg/profile-displayphoto-shrink_400_400/0/1675361828945?e=1681948800&v=beta&t=nN-JS-kBHh-sfyH8kaUbXrWvc0nui6GyneI5tAr5Bzk" alt="">
-            </div>
-
-            
-
-
-        </div>
-
-        
-
-        
-    </div>
-
-
-
-    <div class="box0 reveal" id="box0" id="about" class="about section">
-        <!-- <div class="box01">
-            <h1 class="sub-title">About Me</h1>
-        </div> -->
-
-
-        <div id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="about-col-1">
-                        <img src="https://camo.githubusercontent.com/ffbf71edb9eb65671926a8cc42a5a740bf5b799a9b93699a3a0de76e1793a80b/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f54456e586b637348725034596564436868412f67697068792e676966">
-                    </div>
-                    <div class="about-col-2">
-                        <p  id="user-detail-intro">Java Backend Developer with the ability to learn and collaborate in Rapidly changing environments and compositions. Worked intensively through 1200+ hours of Bootcamp Structure learning of Java, SpringBoot, Hibernate, AWS, JavaScript, HTML5 & CSS3.</p>
-                        <div class="tab-title">
-                            <p class="tab-links active-link" onclick="opentab('skills')">Technical Skills</p>
-                            <p class="tab-links " onclick="opentab('soft skills')">Soft Skills</p>
-                            <p class="tab-links " onclick="opentab('education')">Education</p>
-                        </div>
-                        <div class="tab-contents active-tab">
-                            <ul class="aboutSkill">
-                                <li><span>Java Backend Development</span><br> <span class="co">Java </span><span class="co">| Spring </span><span class="co">| Hibernate </span><span class="co">| SQL </span><span class="co">| AWS </span><span class="co">| GIT</span></li>
-                                <li><span>Frontend Development</span><br><span class="co">HTML5 </span><span class="co">| CSS3 </span><span class="co">| JavaScript</span></li>
-                                <li><span>Data Structure & Algorithms</span><br><span class="co">Arrays/Strings </span><span class="co">| Stacks/Queues </span><span class="co">| Linked List </span><span class="co">| Recursion</span></li>
-                            </ul>
-                        </div>
-                        <div class="tab-contents " id="soft skills">
-                            <ul class="aboutSkill">
-                                <li><span>Self-learning</span><br> <span class="co">Having the skill of self-learning can greatly benefit a developer at their workplace.</span></li>
-                                <li><span>Time management</span><br><span class="co">Being time-conscious can help a developer meet deadlines and give exact estimates.</span></li>
-                                <li><span>Problem-solving skills</span><br><span class="co">It's about designing operating systems, maintaining software systems, or fixing bugs. </span></li>
-                            </ul>
-                        </div>
-                        <div class="tab-contents" id="education">
-                            <ul class="aboutSkill">
-                                <li><span>Full Stack Web Development</span><span class="co"><br>Masai School, Bengaluru<br>August 2022 -Present</span></li>
-                                <!-- <li><span>M.Tech CE</span><span class="co"><br>VBSPU Jaunpur<br> 2020 - 2022</span></li> -->
-                                <li><span>B.Sc Physics(Honours)</span><span class="co"><br>B.D College<br> 2016 - 2019</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-    </div>
+        gap: 20px;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+      footer .bottom_section .right a {
+        opacity: 0.5;
+      }
+      footer .bottom_section .right a:hover {
+        opacity: 1;
+      }
+      footer .bottom_section img {
+        height: 20px;
+        filter: invert(1);
+      }
       
 
 
-    <div class="box2 reveal" id="box2"  id="skills">
-
-        <div class="box21">
-            <h1>
-                TECH-STACK
-            </h1>
-        </div>
-
-        <div class="box22">
-
-            <div class="tool" style="--i:1;" class="skills-card">
-                <div>
-                    <img src="logo/java_logo.png" alt="" class="skills-card-img">
-                </div>
-                <div class="skills-card-name">
-                    JAVA
-                </div>
-            </div>
 
 
-            <div class="tool" style="--i:2;" class="skills-card">
-                <div>
-                    <img src="logo/spring_logo.png" alt="" class="skills-card-img">
-                </div>
-                <div class="skills-card-name">
-                    Spring Boot
-                </div>
-            </div>
+
+      /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
+      #githubstats {
+        width: 55%;
+        margin: 0% 22%;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        height: 207px;
+      }
+      #github-stats-card {
+        height: 100%;
+        width: 50%;
+      }
+      #github-top-langs {
+        height: 100%;
+        width: 51%;
+      }
+      .nav-link .resume .about .section .project-card{
+        color: white;
+      }
+      #github-streak-stats{
+        width: 40%;
+        height: 201px;
+        margin: 0% 30%;
+      }
+      /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+
+      @media only screen and (max-width: 1000px) {
+        .hero_section .container .left_section .heading {
+          font-size: 60px;
+          line-height: 60px;
+        }
+        .hero_section .container .left_section .sub_heading {
+          font-weight: 200;
+          font-size: 40px;
+          line-height: 60px;
+          width: 60%;
+        }
+        .hero_section .container .left_section .description {
+          font-size: 18px;
+        }
+        .work_section .container {
+          padding: 50px 20px;
+          gap: 30px;
+        }
+        .work_section .works .work {
+          width: 700px;
+        }
+        .work_section h2 {
+          font-size: 8vw;
+          line-height: 8vw;
+          width: 100%;
+        }
+        .work_section .sub_heading {
+          font-size: 20px;
+          width: 80%;
+          line-height: 26px;
+        }
+        .works_sub_heading {
+          font-size: 6vw;
+          line-height: 6vw;
+        }
+        .on_the_web_section .container h2 {
+          font-size: 60px;
+          line-height: 60px;
+          margin-top: 40px;
+        }
+        .my_skills_section .container h2 {
+          font-size: 60px;
+          line-height: 60px;
+          margin-top: 80px;
+        }
+        .heading {
+          font-size: 60px;
+          line-height: 60px;
+        }
 
 
-            <div class="tool" style="--i:3;" class="skills-card">
-                <div>
-                    <img src="logo/sql_logo.png" alt="" class="skills-card-img">
-                </div>
-                <div class="skills-card-name">
-                    SQL
-                </div>
-            </div>
+        /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
+        #githubstats{
+          flex-direction: column;
+        }
+        /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
 
 
-            <div class="tool" style="--i:4;" class="skills-card">
-                <div>
-                    <img src="logo/aws_logo.png" alt="" class="skills-card-img">
-                </div>
-                <div class="skills-card-name">
-                    AWS
-                </div>
-            </div>
-
-
-            <div class="tool" style="--i:5;" class="skills-card">
-                <div>
-                    <img src="logo/hibernate_logo.png" alt="" class="skills-card-img">
-                </div>
-                <div class="skills-card-name">
-                    Hibernate
-                </div>
-            </div>
-
-
-            <div class="tool" style="--i:6;" class="skills-card">
-                <div>
-                    <img src="logo/eclipse_logo.png" alt="" class="skills-card-img">
-                </div>
-                <div class="skills-card-name">
-                    Eclipse
-                </div>
-            </div>
-
-
-            <div class="tool" style="--i:7;" class="skills-card">
-                <div>
-                    <img src="logo/Git_logo.png" alt="" class="skills-card-img">
-                </div>
-                <div class="skills-card-name">
-                    Git
-                </div>
-            </div>
-
-
-            <div class="tool" style="--i:8;" class="skills-card">
-                <div>
-                    <img src="logo/html_logo.png" alt="" class="skills-card-img">
-                </div>
-                <div class="skills-card-name">
-                    HTML
-                </div>
-            </div>
-
-
-            <div class="tool" style="--i:9;" class="skills-card">
-                <div>
-                    <img src="logo/css_logo.webp" alt="" class="skills-card-img">
-                </div>
-                <div class="skills-card-name">
-                    CSS
-                </div>
-            </div>
-
-
-            <div class="tool" style="--i:10;" class="skills-card">
-                <div>
-                    <img src="logo/js_logo2.jpg" alt="" class="skills-card-img">
-                </div>
-                <div class="skills-card-name">
-                    Java Script
-                </div>
-            </div>
-
-
-        </div>
-
+      }
+      @media only screen and (max-width: 767px) {
+        header.show {
+          height: 100vh;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          flex-direction: column;
+          padding: 100px 20px;
+          z-index: 100;
+          background-color: rgba(0, 0, 0, 0.95);
+          transition: all 0.8s ease;
+        }
+        header.show nav {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          flex: 1;
+          gap: 10px;
+          padding: 10px 0;
+          max-height: 300px;
+        }
+        header.show .resume_button {
+          display: flex;
+        }
+        header.show .hamburger {
+          position: absolute;
+          gap: 10px;
+          right: 20px;
+          top: 30px;
+        }
+        header.show .hamburger div:first-child {
+          transform: rotate(45deg);
+          position: relative;
+          top: 13px;
+          transition: all 0.3s ease;
+        }
+        header.show .hamburger div:nth-child(2) {
+          display: none;
+        }
+        header.show .hamburger div:last-child {
+          transform: rotate(-45deg);
+          transition: all 0.3s ease;
+        }
+        header .resume_button {
+          display: none;
+        }
+        header .hamburger {
+          display: flex;
+        }
+        header nav {
+          display: none;
+        }
+        .hero_section.blur {
+          filter: blur(8px);
+        }
+        .hero_section {
+          max-height: calc(100vh - 70px);
+        }
+        .hero_section .container .left_section {
+          align-items: center;
+          text-align: center;
+        }
+        .hero_section .container .left_section .sub_heading {
+          font-size: 32px;
+          line-height: 50px;
+          width: 90%;
+        }
+        .hero_section .container .left_section .description {
+          font-size: 18px;
+          width: 80%;
+        }
+        .hero_section .container .left_section .profile_section img {
+          margin-top: 50px;
+          display: block;
+        }
+        .hero_section .background_image {
+          transform: translateY(800px);
+        }
+        @keyframes moveimage {
+          100% {
+            transform: translateY(-200px);
+          }
+        }
+        .hero_section .container {
+          display: flex;
+          flex-direction: column;
+        }
+        .hero_section .container .github,
+        .hero_section .container .linkedin {
+          display: none;
+        }
+        .work_section .container {
+          padding: 50px 20px;
+          gap: 30px;
+        }
+        .work_section h2 {
+          font-size: 10vw;
+          line-height: 10vw;
+        }
+        .work_section .sub_heading {
+          font-size: 18px;
+          width: 80%;
+          line-height: 26px;
+        }
+        .works_sub_heading {
+          font-size: 6vw;
+          line-height: 6vw;
+        }
+        .work_section .works .work {
+          display: flex;
+          flex-direction: column-reverse;
+          width: 80vw;
+          min-height: 800px;
+          /* max-height:auto; */
+          background-color: #e9e9e9;
+          border-radius: 20px;
+          border: 10px solid #f5f5f5;
+          overflow: hidden;
+          gap: 1px;
+          margin-bottom: 50px;
+          position: relative;
+        }
+        .work_section .works .work .right_section {
+          transition: all 0.3s ease, transform 0.3s ease 0.1s;
+          overflow: hidden;
+          flex-basis: 30%;
+        }
+        .work_section .works .work .right_section img {
+          object-fit: cover;
+          transition: all 0.3s ease;
+          width: 100%;
+        }
+        .work_section .works .work .left_section {
+          flex-basis: 70%;
+          transition: all 0.3s ease;
+          border-right: 0;
+          border-top: 1px solid #dfdfdf;
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          padding-top: 15px;
+          background: linear-gradient(#f5f5f5, #fff);
+        }
+        .work_section .work .left_section .content {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          width: 90%;
+          align-items: center;
+          text-align: center;
+          gap: 20px;
+          padding: 20px;
+          transition: all 0.3s ease;
+        }
+        .works .left_section .middle .tags {
+          justify-content: center;
+        }
+        .work_section .left_section h3 {
+          font-size: 7vw;
+          line-height: 8vw;
+        }
+        .work_section .left_section .middle {
+          align-items: center;
+        }
+        .on_the_web_section .container h2 {
+          font-size: 10vw;
+          line-height: 10vw;
+          margin-top: 40px;
+        }
+        .on_the_web_section .container .icons_section {
+          margin-top: 50px;
+        }
+        .my_skills_section .container h2 {
+          font-size: 10vw;
+          line-height: 10vw;
+          margin-top: 80px;
+        }
+        .my_skills_section .container .skills {
+          margin-top: 50px;
+        }
+        footer .container .top_section {
+          flex-direction: column;
+        }
+        footer .container .top_section {
+          display: flex;
+          color: #fff;
+          padding: 60px 20px;
+          gap: 50px;
+        }
+        footer .container .top_section .left_section {
+          flex-basis: 40%;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          align-items: center;
+        }
+        footer .container .top_section .right_section form {
+          flex-basis: 60%;
+          display: flex;
+          flex-direction: column;
+          gap: 60px;
+          align-items: center;
+          text-align: center;
+        }
+        footer .container .top_section .right_section form > div h5 {
+          font-size: 22px;
+          line-height: 30px;
+        }
+        footer
+          .container
+          .top_section
+          .right_section
+          form
+          > div
+          h5:nth-child(2) {
+          top: 0;
+          font-size: 22px;
+          line-height: 30px;
+        }
+        footer .bottom_section .left {
+          color: #fff;
+          opacity: 0.5;
+        }
+        .heading {
+          font-size: 9vw;
+          line-height: 9vw;
+        }
         
         
+        /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
         
-    </div>
+        #githubstats{
+          display: none;
+        }
+
+        /* =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+
+
+      }
+
+
+
+
       
+      
+    </style>
 
-
-    <div class="box4 reveal" id="box4">
-
-        <div class="container">
-            <div class="box41">
-                <h1>My Skills</h1>
-            </div>
-            <div class="skills-list">
-                <div>
-                    <i class="fa-brands fa-java"></i>
-                    <h2>Java Backend Development</h2>
-                    <p>Java is capable of handling more robust programming tasks than its front end counterpart. Java is an incredibly useful skill for back end developers;it's a high-performance language that supports object-oriented programming and can run in any system that supports a Java Virtual machine.</p>
-                </div>
-                <div>
-                    <i class="fa-solid fa-code"></i>
-                    <h2>Frontend Development</h2>
-                    <p>Front-End Developer is responsible for developing new user-facing features, determining the structure and design of web pages, building reusable codes, optimizing page loading times, and using a variety of markup languages to create the web pages using HTML5 / CSS & JavaScript.</p>
-                </div>
-                <div>
-                    <i class="fa-solid fa-cubes"></i>
-                    <h2>Data Structure & Algorithms</h2>
-                    <p>A data structure is a named location that can be used to store and organize data. And, an algorithm is a collection of steps to solve a particular problem.Learning data structures and algorithms allow us to write efficient and optimized computer programs.</p>
-                </div>
-                <div>
-                    <i class="fa-solid fa-face-smile"></i>
-                    <h2>Communication Effectiveness</h2>
-                    <p>Effective communication is the process of exchanging ideas, thoughts, opinions, knowledge, and data so that the message is received and understood with clarity and purpose. When we communicate effectively, both the sender and receiver feel satisfied.</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="box3 reveal" id="box3" >
-
-        <div class="box31">
-            <h1>PROJECTS</h1>
-        </div>
-        <div class="box32">
-
-
-            <!-- 
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <figure class="swing"><img class="proimg" src="image/proj1.PNG" alt=""></figure> 
-                    </div>
-                    <div class="flip-card-back">
-                        <h1>Nykaa.com</h1>
-                        <p>Buy cosmetics & beauty products online from Nykaa, the online shopping beauty store. Browse makeup, health products & more from top beauty brands.</p>
-                        <p>Tech stack :- HTML | CSS | JavaScript</p>
-                        <div class="icons">
-                            <a href="https://github.com/Lovely123-upadhyay/nykaa_clone"><i class="fa-brands fa-github"></i></a>
-                        
-                            <a href="https://chimerical-chimera-b05f10.netlify.app/"> <i class="fa-solid fa-link"></i> </a>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <figure class="swing"><img class="proimg" src="image/proj2.PNG" alt=""></figure> 
-                    </div>
-                    <div class="flip-card-back">
-                        <h1>MyGlAMM</h1>
-                        <p>Buy international beauty products & cosmetic makeup items on MyGlamm, the online beauty shopping store. Shop Manish Malhotra beauty products & more</p>
-                        <p>Tech stack :- HTML | CSS | JavaScript</p>
-                        <div class="icons">
-                            <a href="https://github.com/Lovely123-upadhyay/plausible-creator-1407"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://luminous-gingersnap-66f567.netlify.app/"><i class="fa-solid fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <figure class="swing"><img class="proimg" src="image/proj3.PNG" alt=""></figure> 
-                    </div>
-                    <div class="flip-card-back">
-                        <h1>Star wars name search</h1>
-                        <p>Here you can serach Star Wars character using name and see their details</p>
-                        <p>Tech stack :- HTML | CSS | JavaScript</p>
-                        <div class="icons">
-                            <a href="https://github.com/Lovely123-upadhyay/starwars"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://lovely123-upadhyay.github.io/starwars/"><i class="fa-solid fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-            </div> -->
-        </div>
-
-
-    </div>
-
-
-
-
-
-
-
-
-<!-- project section -->
-
-<div class="hero_section">
+     <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js" class="react-activity-calendar" ></script>
+     <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"/>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <header  id="nav-menu">
+      <a href="index.html"><h2 class="logo">S</h2></a>
+      <nav>
+        <a href="index.html" id="home"  class="nav-link home">H<span class="letter-o"></span>me</a>
+        <a href="#about"class="nav-link about">Ab<span class="letter-o"></span>UT</a>
+        <a href="#tools_and_skills">T<span class="letter-o"></span>ols & Skills<a href="#skills" class="nav-link skills"></a></a>
+        <a href="#work_section" class="nav-link projects">W<span class="letter-o"></span>rk</a>
+        <a href="#contact" class="nav-link contact">C<span class="letter-o"></span>ntact</a>
+      </nav>
+      <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <a
+        id="resume-button-1"
+        id="resume-button-2"
+        id="resume-link-1"
+        id="resume-link-2"
+        class="button_style1 resume_button"
+        href="Asset/Md_Humair_Raza.pdf"
+        download="Md_Humair_Raza_Resume"
+        target="_blank"
+        class="nav-link resume"
+        onclick="window.open('https://drive.google.com/file/d/1ptjAIsk7d0Su-wJimx7ttRnJQ0yEJtfC/view?usp=share_link')"
+        >Download Resume <img src="images/download.png" alt=">"
+      /></a>
      
-    <div class="linkedin"></div>
-    <div class="github"></div>
-   
-</div>
+    </header>
 
+    <div class="hero_section" id="about" class="about section">
+      <img class="background_image" src="images/5.jpg" alt="" />
+      <div class="container">
+        <div class="left_section">
+          <div class="profile_section">
+            <img src="images/DSC_3392 copy.JPG" alt="" /  class="home-img">
+          </div>
+          <h2 class="heading show_on_scroll"  id="user-detail-name">Hi,<br />I'm Humair.</h2>
+          <p class="c3">
+            I love building websites.
+            <!-- Dream Big Dream11 -->
+          </p>
+          <p class="description"  id="user-detail-intro">
+            <span class="blue">Java Backend Developer</span>  with the ability to learn and collaborate in Rapidly changing environments and compositions. Worked intensively through 1200+ hours of Bootcamp Structure learning of Java, SpringBoot, Hibernate, AWS, JavaScript, HTML5 & CSS3.
+          </p>
+          <!=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=->
+          <a
+            id="resume-button-1"
+            id="resume-button-2"
+            id="resume-link-1"
+            id="resume-link-2"
+            class="button_style1 resume_button"
+            href="Asset/Md_Humair_Raza.pdf"
+            download="Md_Humair_Raza_Resume"
+            target="_blank"
+            class="nav-link resume"
+            onclick="window.open('https://drive.google.com/file/d/1ptjAIsk7d0Su-wJimx7ttRnJQ0yEJtfC/view?usp=share_link')"
+            >Download Resume <img src="images/download.png" alt=">"
+          /></a>
+          <!=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=->
+        </div>
+        <div class="linkedin">
+          <img src="images/linkedin-back.png" alt="" />
+          <div class="profile_section">
+            <img src="images/DSC_3392 copy.JPG" alt="" /  class="home-img">
+          </div>
+          <p class="tag">
+            <img src="images/linkedin-round.png" alt="" /> LinkedIn
+          </p>
+          <div class="stats_section">
+            <div class="stats">
+              <div>
+                <h4>Connec-tions</h4>
+                <p>1939</p>
+              </div>
+              <div>
+                <h4>Recommen-dations</h4>
+                <p>4</p>
+              </div>
+            </div>
+            <a href="https://www.linkedin.com/in/mdhumairraza/" target="_blank"
+              >Visit <img src="images/left-arrow.png" alt=""
+            /></a>
+          </div>
+        </div>
+        <div class="github">
+          <img src="images/github-back.png" alt="" />
+          <div class="profile_section">
+            <img src="images/DSC_3392 copy.JPG" alt="" /  class="home-img">
+          </div>
+          <p class="tag"><img src="images/github.png" alt="" /> Github</p>
+          <div class="stats_section">
+            <div class="stats">
+              <div>
+                <h4>Total Star</h4>
+                <p>2.5k</p>
+              </div>
+              <div>
+                <h4>Total commits</h4>
+                <p>247</p>
+              </div>
+            </div>
+            <a href="https://github.com/mdhumairraza" target="_blank"
+              >Visit <img src="images/left-arrow.png" alt=""
+            /></a>
+          </div>
+        </div>
+        <img class="hover_icon" src="images/tap.png" alt="" />
+      </div>
+    </div>
 
-<div class="work_section" id="work_section"  id="projects">
-  <div class="container">
-    </p>
-    <div class="works">
-      <div class="work" class="project-card">
-        <div class="left_section show_on_scroll">
-          <div class="content">
-            <h3 class="project-title">BestBuy</h3>
-            <p class="description"  class="project-description">
-                Digital Basket is a clone of an e-commerce website BestBuy, which sells various products in the field of electrical appliances.
-            </p>
-            <div class="middle">
-              <a
-                href="https://github.com/SumitUjjwal/obnoxious-ladybug-6279"
-                class="underline_link"
-                target="_blank"
-                class="project-github-link"
-                >Github Link</a
-              >
+    <!-- changes srt -->
+
+    <div class="my_skills_section" id="tools_and_skills">
+      <div class="container" id="skills">
+        <h2>My tools <span class="blue">&</span> skills</h2>
+        <p class="c2">Tools I work with</p>
+        <div class="skills">
+          <div  class="skills-card">
+            <img src="images/java_logo.png" alt="" / class="skills-card-img">
+            <h3  class="skills-card-name">Java</h3>
+          </div>
+          <div  class="skills-card">
+            <img src="images/spring_logo.png" alt="" / class="skills-card-img">
+            <h3  class="skills-card-name">Spring</h3>
+          </div>
+          <div  class="skills-card">
+            <img src="images/springboot_logo.png" alt="" / class="skills-card-img">
+            <h3  class="skills-card-name">SpringBoot</h3>
+          </div>
+          <div  class="skills-card">
+            <img src="images/mysqlcolor.png" alt="" / class="skills-card-img">
+            <h3  class="skills-card-name">SQL/MySQL</h3>
+          </div>
+          <div  class="skills-card">
+            <img src="images/hibernate_logo.png" alt="" / class="skills-card-img">
+            <h3  class="skills-card-name">Hibernate</h3>
+          </div>
+          <div  class="skills-card">
+            <img src="images/maven.png" alt="" / class="skills-card-img">
+            <h3  class="skills-card-name">Maven</h3>
+          </div>
+          <div  class="skills-card">
+            <img src="images/aws_logo.png" alt="" / class="skills-card-img">
+            <h3  class="skills-card-name">AWS</h3>
+          </div>
+          <div  class="skills-card">
+            <img src="images/sts.png" alt="" / class="skills-card-img">
+            <h3  class="skills-card-name">STS</h3>
+          </div>
+          <div  class="skills-card">
+            <img src="images/git.png" alt="" / class="skills-card-img">
+            <h3  class="skills-card-name">Git/Github</h3>
+          </div>
+          <div  class="skills-card">
+            <img src="images/html.png" alt="" / class="skills-card-img">
+            <h3  class="skills-card-name">HTML</h3>
+          </div>
+          <div  class="skills-card">
+            <img src="images/csscolor.png" alt="" / class="skills-card-img">
+            <h3  class="skills-card-name">CSS</h3>
+          </div>
+          <div  class="skills-card">
+            <img src="images/javascriptcolor.png" alt="" / class="skills-card-img">
+            <h3  class="skills-card-name">Javascript</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- changes end -->
+
+    <div class="work_section" id="work_section">
+      <div class="container" id="projects">
+        <h2 class="show_on_scroll">
+          Work speaks <span class="blue">louder</span> than words.
+        </h2>
+        <p class="sub_heading show_on_scroll">
+          I’ll help
+          <span class="c2">visualize your creative ideas.</span> From web design
+          to developing user friendly wesites.
+        </p>
+        <div class="works">
+
+          <div class="work"  class="project-card" >
+            <div class="left_section show_on_scroll">
+              <div class="content">
+                <h3 class="project-title">BestBuy</h3>
+                <p class="description"  class="project-description">
+                  Digital Basket is a clone of an e-commerce website BestBuy, which sells various products in the field of electrical appliances.
+                </p>
+                <div class="middle">
+                  <a
+                    href="https://github.com/SumitUjjwal/obnoxious-ladybug-6279"
+                    class="underline_link"
+                    target="_blank"
+                    class="project-github-link"
+                    >Github Link</a
+                  >
+                  <a
+                    href="https://legendary-fairy-bc0edb.netlify.app/"
+                    class="underline_link"
+                    target="_blank"
+                    class="project-deployed-link"
+                    >Visit website</a
+                  >
+                  <div class="tags"  class="project-tech-stack">
+                    <p>HTML</p>
+                    <p>CSS</p>
+                    <p>JavaScript</p>
+                    <br />
+                    <p>JSON</p>
+                    <p>GIT</p>
+                  </div>
+                </div>
+                <h4 class="year">2022</h4>
+              </div>
+            </div>
+            <div class="right_section show_on_scroll">
               <a
                 href="https://legendary-fairy-bc0edb.netlify.app/"
-                class="underline_link"
                 target="_blank"
-                class="project-deployed-link"
-                >Visit website</a
-              >
-              <div class="tags" class="project-tech-stack">
-                <p>HTML</p>
-                <p>CSS</p>
-                <p>JavaScript</p>
-                <br />
-                <p>JSON</p>
-                <p>GIT</p>
+                ><img src="images/bestbuy.png" alt=""
+              /></a>
+            </div>
+          </div>
+
+
+          <div class="work"  class="project-card" >
+            <div class="left_section show_on_scroll">
+              <div class="content">
+                <h3 class="project-title">Md Humair Raza Profile</h3>
+                <p class="description"  class="project-description">
+                  The "profile" website was been created as  within 5 days. Built from Scatch with different styles and animation.
+                </p>
+                <div class="middle">
+                  <a
+                    href="https://github.com/mdhumairraza/mdhumairraza.github.io"
+                    class="underline_link"
+                    target="_blank"
+                    class="project-github-link"
+                    >Github Link</a
+                  >
+                  <a
+                    href="https://mdhumairraza.netlify.app/"
+                    class="underline_link"
+                    target="_blank"
+                    class="project-deployed-link"
+                    >Visit website</a
+                  >
+                  <div class="tags"  class="project-tech-stack">
+                    <p>HTML</p>
+                    <p>CSS</p>
+                    <p>JavaScript</p>
+                    <p>JSON</p>
+                    <p>DOM</p>
+                  </div>
+                </div>
+                <h4 class="year">2023</h4>
               </div>
             </div>
-            <h4 class="year">2022</h4>
+            <div class="right_section show_on_scroll">
+              <img src="images/mdhumairraza.png" alt="" />
+            </div>
           </div>
-        </div>
-        <div class="right_section show_on_scroll">
-          <a
-            href="https://legendary-fairy-bc0edb.netlify.app/"
-            target="_blank"
-            ><img src="https://s9.gifyu.com/images/Screenshot_20230214_114305.png" alt=""
-          /></a>
-        </div>
 
 
-      </div>
-      <div class="work" class="project-card">
-        <div class="left_section show_on_scroll">
-          <div class="content">
-            <h3 class="project-title">Md Humair Raza Profile</h3>
-            <p class="description"  class="project-description">
-              The "profile" website was been created as project within 5 days. 
-              Built from Scatch with different styles and animation.
-            </p>
-            <div class="middle">
-              <a
-                href="https://github.com/mdhumairraza/mdhumairraza.github.io"
-                class="underline_link"
-                target="_blank"
-                class="project-github-link"
-                >Github Link</a
-              >
-              <a
-                href="https://mdhumairraza.github.io/"
-                class="underline_link"
-                target="_blank"
-                class="project-deployed-link"
-                >Visit website</a
-              >
-              <div class="tags" class="project-tech-stack">
-                <p>HTML</p>
-                <p>CSS</p>
-                <p>JavaScript</p>
-                <p>JSON</p>
-                <p>DOM</p>
+          <!-- <div class="work">
+            <div class="left_section show_on_scroll">
+              <div class="content">
+                <h3>OrbitZ_Clone</h3>
+                <p class="description">
+                  Orbitz is an online travel agency (OTA) that you can use to
+                  book flights, hotels, and much more.
+                </p>
+                <div class="middle">
+                  <a
+                    href=""
+                    class="underline_link"
+                    target="_blank"
+                    >Github Link</a
+                  >
+                  <a
+                    href="https://orbitz-clone-masaischool-project.netlify.app/"
+                    class="underline_link"
+                    target="_blank"
+                    >Visit website</a
+                  >
+                  <div class="tags">
+                    <p>JavaScript</p>
+                    <p>HTML</p>
+                    <p>CSS</p>
+                  </div>
+                </div>
+                <h4 class="year">2021</h4>
               </div>
             </div>
-            <h4 class="year">2023</h4>
-          </div>
-        </div>
-        <div class="right_section show_on_scroll">
-          <img src="https://s9.gifyu.com/images/Screenshot_20230215_033306.png" alt="Md Humair Raza" />
+            <div class="right_section show_on_scroll">
+              <img src="images/orbitz_clone.png" alt="" />
+            </div>
+          </div> -->
+          
+          
         </div>
       </div>
-      
     </div>
-  </div>
-</div>
-
-<!-- project section -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="box8 reveal">
-        <div class="calendar">
-
-            <!-- this is the div where your calander will apear -->
-        
-        </div>
-        <div class="github_stat">
-            <img src="https://github-readme-streak-stats.herokuapp.com/?user=mdhumairraza&" alt="" id="github-stats-card" >
-
-        </div>
-    </div>
-
-
-
-    <div class="box7 reveal">
-
-        <div class="box71">
-            <div class="pieContainer">
-                <div class="pieBackground">
-                </div>
-                <div id="pieSlice99_1" class="hold">
-                    <div class="danny Col1">
-                    </div>
-                </div>
-                <div id="pieSlice99_2" class="hold">
-                    <div class="danny Col1">
-                    </div>
-                </div>
-                <div class="stat-circle-cover">  
-                    <span class="stat-number">1200+</span>
-                </div>
-            </div>
-            <div class="box712">
-                <span class="bold">Hours</span> of full stack coading
-            </div>
-        </div>
-        
-        <div class="box71">
-            <div class="pieContainer">
-                <div class="pieBackground">
-                </div>
-                <div id="pieSlice99_1" class="hold">
-                    <div class="danny Col2">
-                    </div>
-                </div>
-                <div id="pieSlice99_2" class="hold">
-                    <div class="danny Col2">
-                    </div>
-                </div>
-                <div class="stat-circle-cover">  
-                    <span class="stat-number">800+</span>
-                </div>
-            </div>
-            <div class="box712">
-                <span class="bold">OJ and Leecode</span> problems solved
-            </div>
-        </div>
-        
-        <div class="box71">
-            <div class="pieContainer">
-                <div class="pieBackground">
-                </div>
-                <div id="pieSlice99_1" class="hold">
-                    <div class="danny Col3">
-                    </div>
-                </div>
-                <div id="pieSlice99_2" class="hold">
-                    <div class="danny Col3">
-                    </div>
-                </div>
-                <div class="stat-circle-cover">  
-                    <span class="stat-number">40+</span>
-                </div>
-            </div>
-            <div class="box712">
-                <span class="bold">Git</span> commits
-            </div>
-        </div>
-        
-        <div class="box71">
-            <div class="pieContainer">
-                <div class="pieBackground">
-                </div>
-                <div id="pieSlice99_1" class="hold">
-                    <div class="danny Col4">
-                    </div>
-                </div>
-                <div id="pieSlice99_2" class="hold">
-                    <div class="danny Col4">
-                    </div>
-                </div>
-                <div class="stat-circle-cover">  
-                    <span class="stat-number">10+</span>
-                </div>
-            </div>
-            <div class="box712">
-                <span class="bold">Projects</span> Done
-            </div>
-        </div>
-        
-        <div class="box71">
-            <div class="pieContainer">
-                <div class="pieBackground">
-                </div>
-                <div id="pieSlice99_1" class="hold">
-                    <div class="danny Col5">
-                    </div>
-                </div>
-                <div id="pieSlice99_2" class="hold">
-                    <div class="danny Col5">
-                    </div>
-                </div>
-                <div class="stat-circle-cover">  
-                    <span class="stat-number">100+</span>
-                </div>
-            </div>
-            <div class="box712">
-                <span class="bold">Hours</span> of soft skills
-            </div>    
-
-        </div>
-        
-    </div> 
-    
-
-
-    <div class="box5 reveal" id="box5" id="contact" >
-        <div class="box51">
-            <h1>CONTACT</h1>
-        </div>
-
-        <div class="box52">
-
-            <div class="box511">
-
-                <h1 class="box5h1">Reach Out to me!</h1>
-
-                <h3 class="box5h3">DISCUSS A PROJECT OR JUST WANT TO SAY HI? MY INBOX IS OPEN FOR ALL.</h3>
-
-                
-
-                <div class="box5111">
-                    <p><i class="fa-solid fa-location-dot"></i>Patna, Bihar </p>
-                </div>
-                <div class="box5111">
-                    <p  id="contact-email"><i class="fa-solid fa-envelope"></i> mdhumairraza@yahoo.com</p>
-                </div>
-                <div class="box5111">
-                    <p  id="contact-phone"><i class="fa-solid fa-phone" ></i> +91-9572349200</p>
-                </div>
-
-                <div class="box5112">
-                    <div class="ico" id="contact-github"><a href="https://github.com/mdhumairraza"><i class="fa-brands fa-github"></i></a></div>
-                    <div class="ico" id="contact-linkedin"><a href="https://www.linkedin.com/in/mdhumairraza/"><i class="fa-brands fa-linkedin"></i></a></div>
-                    <div class="ico"><a href="mailto:mdhumairraza@yahoo.com"><i class="fa-solid fa-envelope"></i></a></div>
-                    <div class="ico"><a href="tel:+919572349200"><i class="fa-solid fa-phone"></i></a></div>
-                    <div class="ico"><a href="https://wa.me/919572349200"><i class="fa-brands fa-whatsapp"></i></a></div>
-                </div>
-
-                
-
-            </div>
-
-                        
-            <div class="box512">
-                <img class="img51" src="image/profile4.jpg" alt="">
-                <div class="btn_div">
-                    <button class="rbtn"><a download="" href="https://drive.google.com/file/d/1ptjAIsk7d0Su-wJimx7ttRnJQ0yEJtfC/view?usp=share_link">Resume</a></button>
-                </div>
-            </div>
-
-        </div>
-        
-
-
-    </div>
-
-
-
-    <div class="box6" id="box6">
-        <p>-=-=-=-=-=-</p>
-        <!-- <p>© Copyright 2022, All Rights Reserved.</p> -->
-    </div>
-
-
 
     <div >
-        <a href="#box1" class="arrup"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
-            <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
-          </svg></a>
+      <div id="githubstats">
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mdhumairraza&layout=compact" alt=""  id="github-top-langs">
+        <img src="https://github-readme-stats.vercel.app/api?username=mdhumairraza&theme=vue&show_icons=true&count_private=true" alt="" id="github-stats-card">
+      </div>
+      <div>
+       
+      </div>
+      <div>
+        <img src="https://github-readme-streak-stats.herokuapp.com?user==mdhumairraza&background=FFFFFF&border=000000&stroke=000000&ring=00EB5A&currStreakNum=000000&sideNums=000000&fire=00EB5A&currStreakLabel=00EB5A" alt="" id="github-streak-stats" >
+      </div>
     </div>
+    <div class="calendar" style="width: 71%;"  class="react-activity-calendar" >
+
+      <!-- this is the div where your calander will apear -->
+  
+    </div>
+    <br>
+    <br>
+    <div class="on_the_web_section">
+      <div class="container">
+        <h2>On the <span class="blue">web</span></h2>
+        <p class="c2">Find me on social media</p>
+        <div class="icons_section">
+          <a href="https://github.com/mdhumairraza" target="_blank"
+            ><div><img src="images/github.png" alt="" /></div>
+            <h4>Github</h4></a
+          ><a href="#" target="_blank"
+            ><div><img src="images/codepen.png" alt="" /></div>
+            <h4>CodePen</h4></a
+          ><a href="https://replit.com/@Humair" target="_blank"
+            ><div><img src="images/replit 3.png" alt="" /></div>
+            <h4>Replit</h4></a
+          ><a
+            href="#"
+            target="_blank"
+            ><div><img src="images/stack-overflow-color.png" alt="" /></div>
+            <h4>StackOverflow</h4></a
+          ><a href="https://www.linkedin.com/in/mdhumairraza/" target="_blank"
+            ><div><img src="images/linkedincolor.png" alt="" /></div>
+            <h4>LinkedIn</h4></a
+          ><a href="#" target="_blank"
+            ><div><img src="images/instagram.png" alt="" /></div>
+            <h4>Instagram</h4></a
+          ><a
+            href="#"
+            target="_blank"
+            ><div><img src="images/Facebook new.png" alt="" /></div>
+            <h4>facebook</h4></a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- a1 s -->
+    <!-- a1 end -->
+    <footer id="contact">
+      <div class="container">
+        <div class="top_section">
+          <div class="left_section">
+            <h2 class="heading">Contact me<span class="blue">.</span></h2>
+            <a href="mailto:mdhumairraza@yahoo.com"  id="contact-email"
+              ><img src="images/email.png" alt="" /> mdhumairraza@yahoo.com</a
+            >
+
+            <a href="https://www.linkedin.com/in/mdhumairraza/" target="_blank" id="contact-linkedin"
+              ><img src="images/linkedin.png" alt="" /> Connect me on
+              LinkedIn</a
+            >
+
+            <a href="https://github.com/mdhumairraza" target="_blank"  id="contact-github"
+              ><img src="images/github.png" alt="" /> Connect me on Github</a
+            >
+
+            <a href="#" id="contact-phone"
+              ><img src="images/phone.png" alt="" /> +91 9572349200</a
+            >
+
+            
+          </div>
 
 
-</body>
+          <div class="right_section">
+            <form action="">
+              <div>
+                <h5>Have an idea?</h5>
+                <h5>Let's make something great!</h5>
+              </div>
+              <input
+                placeholder="Name"
+                style="
+                  height: 40px;
+                  padding: 10px 10px;
+                  font-family: Poppins;
+                  border: 0;
+                  border-bottom: 2px solid #fff;
+                  width: 100%;
+                  font-size: 16px;
+                  font-weight: 300;
+                  background-color: transparent;
+                  color: #fff;
+                "
+              />
+              <input type="email" placeholder="Email" />
+              <input
+                placeholder="Message"
+                style="
+                  height: 40px;
+                  padding: 10px 10px;
+                  font-family: Poppins;
+                  border: 0;
+                  border-bottom: 2px solid #fff;
+                  width: 100%;
+                  font-size: 16px;
+                  font-weight: 300;
+                  background-color: transparent;
+                  color: #fff;
+                "
+              />
+              <input class="button_style1" type="Submit" value="Send" />
+            </form>
+          </div>
+        </div>
+        <div class="bottom_section">
+          <div class="left">
+            <p class="c2">Handcrafted by © Md Humair Raza.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      GitHubCalendar(".calendar", "mdhumairraza");
+      GitHubCalendar(".calendar", "mdhumairraza", { responsive: true });
+  </script>
+    <script src="/static/js/main.c05e53dd.chunk.js"></script>
+  </body>
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    let logo = document.querySelector(".logo");
+    logo.addEventListener("mouseover", () => {
+      "N" == logo.innerHTML ? (logo.innerHTML = "M") : (logo.innerHTML = "N");
+    });
+    let scroll =
+        window.requestAnimationFrame ||
+        function (e) {
+          window.setTimeout(e, 1e3 / 60);
+        },
+      elementToShow = document.querySelectorAll(".show_on_scroll");
+    function loop() {
+      elementToShow.forEach((e) => {
+        isElementInViewport(e)
+          ? e.classList.add("is_visible")
+          : e.classList.remove("is_visible");
+      }),
+        scroll(loop);
+    }
+    function isElementInViewport(e) {
+      var t = e.getBoundingClientRect();
+      return (
+        t.top <= 0 ||
+        (t.bottom >= window.innerHeight && t.top <= window.innerHeight) ||
+        (t.top >= 0 && t.bottom <= window.innerHeight + 10)
+      );
+    }
+    loop();
+    let cardContainer = document.querySelector(".right_section"),
+      linkedin = document.querySelector(".linkedin"),
+      linked_profile = document.querySelector(".linkedin .profile_section"),
+      linkedin_profile_i = document.querySelector(
+        ".linkedin .profile_section img"
+      ),
+      linked_profile_img = document.querySelector(".linkedin>img"),
+      github_profile = document.querySelector(".github .profile_section"),
+      github_profile_i = document.querySelector(".github .profile_section img"),
+      github_profile_img = document.querySelector(".github>img"),
+      github_stats = document.querySelector(".github .stats_section"),
+      linkedin_stats = document.querySelector(".linkedin .stats_section"),
+      github = document.querySelector(".github"),
+      linkedinTag = document.querySelector(
+        ".hero_section .container .linkedin .tag"
+      ),
+      githubTag = document.querySelector(
+        ".hero_section .container .github .tag"
+      ),
+      hoverIcon = document.querySelector(
+        ".hero_section .container .hover_icon"
+      );
+    linkedin.addEventListener("mouseover", () => {
+      (linkedin.style.flexBasis = "90%"),
+        (linkedin.style.zIndex = "2"),
+        (github.style.zIndex = "1"),
+        (linkedin_profile_i.style.transform = "translateY(-120px)"),
+        (linkedin_stats.style.transform = "translateY(0px)"),
+        (linked_profile_img.style.top = "0px"),
+        (github.style.flexBasis = "10%"),
+        (github_profile_i.style.transform = "translateY(220px)"),
+        (github_profile_i.style.opacity = "0"),
+        (github_profile_img.style.top = "200px"),
+        (github_stats.style.transform = "translateY(270px)"),
+        (linkedin.style.clipPath = "polygon(0 0, 100% 0, 100% 100%, 0 100%)"),
+        (github.style.clipPath =
+          "polygon(0 55%, 100% 36%, 100% 100%, 0% 100%)"),
+        (linkedinTag.style.transform = "rotate(-90deg) translateX(200px)"),
+        (githubTag.style.transform = "rotate(-90deg) translateX(-200px)"),
+        (hoverIcon.style.animationPlayState = "paused");
+    }),
+      github.addEventListener("mouseover", () => {
+        (linkedin.style.flexBasis = "10%"),
+          (github.style.zIndex = "2"),
+          (linkedin.style.zIndex = "1"),
+          (linkedin_stats.style.transform = "translateY(270px)"),
+          (linked_profile_img.style.top = "-100px"),
+          (linkedin_profile_i.style.transform = "translateY(220px)"),
+          (github.style.flexBasis = "90%"),
+          (github_profile_img.style.top = "0px"),
+          (github_profile_i.style.transform = "translateY(-120px)"),
+          (github_profile_i.style.opacity = "1"),
+          (github_stats.style.transform = "translateY(0px)"),
+          (github.style.clipPath = "polygon(0 0, 100% 0, 100% 100%, 0 100%)"),
+          (linkedin.style.clipPath = "polygon(0 0, 100% 0, 100% 45%, 0 64%)"),
+          (githubTag.style.transform = "rotate(-90deg) translateX(-200px)"),
+          (linkedinTag.style.transform = "rotate(-90deg) translateX(200px)"),
+          (hoverIcon.style.animationPlayState = "paused");
+      });
+    let menu = document.querySelector(".hamburger"),
+      header = document.querySelector("header"),
+      heroSection = document.querySelector(".hero_section"),
+      anyHeaderLinks = document.querySelectorAll("header a");
+    menu.addEventListener("click", () => {
+      header.classList.toggle("show"), heroSection.classList.toggle("blur");
+    }),
+      anyHeaderLinks.forEach((e) => {
+        e.addEventListener("click", () => {
+          header.classList.toggle("show"), heroSection.classList.toggle("blur");
+        });
+      });
+    let rightSection = document.querySelectorAll(".works .work .right_section"),
+      description = document.querySelectorAll(
+        ".works .work .right_section .description"
+      ),
+      leftSection = document.querySelectorAll(".works .work .left_section"),
+      leftSectionContent = document.querySelectorAll(
+        ".works .work .left_section .content"
+      ),
+      rightSectionImg = document.querySelectorAll(
+        ".work_section .works .work .right_section img"
+      ),
+      width = document.body.clientWidth;
+    if (width > 768)
+      for (let e = 0; e < rightSection.length; e++)
+        rightSection[e].addEventListener("mouseover", () => {
+          (rightSection[e].style.flexBasis = "100%"),
+            (leftSection[e].style.flexBasis = "0%"),
+            (leftSectionContent[e].style.opacity = "0");
+        }),
+          rightSection[e].addEventListener("mouseout", () => {
+            (rightSection[e].style.flexBasis = "50%"),
+              (leftSection[e].style.flexBasis = "50%"),
+              (leftSectionContent[e].style.opacity = "1");
+          }),
+          leftSection[e].addEventListener("mouseover", () => {
+            (rightSection[e].style.flexBasis = "50%"),
+              (leftSection[e].style.flexBasis = "50%"),
+              (leftSectionContent[e].style.opacity = "1"),
+              (leftSection[e].style.backgroundColor = "white");
+          });
+    else
+      for (let e = 0; e < rightSection.length; e++)
+        rightSection[e].addEventListener("mouseover", () => {
+          (rightSection[e].style.flexBasis = "70%"),
+            (leftSection[e].style.flexBasis = "30%"),
+            (leftSectionContent[e].style.opacity = "1");
+        }),
+          rightSection[e].addEventListener("mouseout", () => {
+            (rightSection[e].style.flexBasis = "30%"),
+              (leftSection[e].style.flexBasis = "70%"),
+              (leftSectionContent[e].style.opacity = "1");
+          }),
+          leftSection[e].addEventListener("mouseover", () => {
+            (rightSection[e].style.flexBasis = "30%"),
+              (leftSection[e].style.flexBasis = "70%"),
+              (leftSectionContent[e].style.opacity = "1"),
+              (leftSection[e].style.backgroundColor = "white");
+          });
+
+
+          let calander = document.querySelector(".react-activity-calendar");
+  </script>
 </html>
-<script src="script.js"></script>
-<script>
-    GitHubCalendar(".calendar", "mdhumairraza");
-    GitHubCalendar(".calendar", "mdhumairraza", { responsive: true });
-</script>
