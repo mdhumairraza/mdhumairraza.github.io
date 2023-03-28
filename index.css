@@ -162,7 +162,7 @@
       transform: rotate(360deg);
     }
   }
-
+/* 
   header nav {
     display: flex;
     justify-content: space-around;
@@ -191,6 +191,41 @@
     width: 40px;
     margin: 0 2px;
   }
+ */
+/* -==--=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=--= */
+
+  #navkadiv {
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+  max-width: 500px;
+}
+
+ nav a {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+  .letter-o {
+  display: inline-block;
+  margin: 0 1px;
+  width: 13px;
+  height: 13px;
+  border: 2px solid #fff;
+  border-radius: 17px;
+  transition: 0.3s all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+  a:hover .letter-o {
+  width: 40px;
+  margin: 0 2px;
+}
+
+/* -==--=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=--= */
+
+
 
   header .resume_button {
     display: flex;
@@ -234,6 +269,9 @@
     border-radius: 10px;
     transition: all 0.3s ease;
   }
+
+
+
 
   .hero_section {
     background-color: #000;
