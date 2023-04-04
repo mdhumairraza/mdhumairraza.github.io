@@ -147,4 +147,4 @@ else
       });
 
 
-let calander = document.querySelector(".react-activity-calendar");
+let calander = document.querySelector(".calendar");
