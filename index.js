@@ -1,7 +1,7 @@
 
 let logo = document.querySelector(".logo");
 logo.addEventListener("mouseover", () => {
-  "N" == logo.innerHTML ? (logo.innerHTML = "M") : (logo.innerHTML = "N");
+  "H" == logo.innerHTML ? (logo.innerHTML = "R") : (logo.innerHTML = "H");
 });
 let scroll =
   window.requestAnimationFrame ||
@@ -147,4 +147,4 @@ else
       });
 
 
-// let calander = document.querySelector(".react-activity-calendar");
+let calander = document.querySelector(".react-activity-calendar");
