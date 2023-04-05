@@ -15,9 +15,9 @@
   <title>Md Humair Raza - Portfolio</title>
 
   <link rel="stylesheet" href="index.css">
-  <!-- <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"
+  <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"
     class="react-activity-calendar"></script>
-  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" /> -->
+  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
 </head>
 
 <body>
@@ -36,15 +36,16 @@
       <a href="#work_section" class="nav-link projects">W<span class="letter-o"></span>rk</a>
       <a href="#contact" class="nav-link contact">C<span class="letter-o"></span>ntact</a>
     </nav>
-    <div id="resume-button-1">
+    <!-- <div id="resume-button-1"> -->
 
       <a  id="resume-link-1" 
         class="button_style1 resume_button" download="Md-Humair-Raza-Resume.pdf"
         target="_blank" class="nav-link resume"
-        href="Asset/Md-Humair-Raza-Resume.pdf">Download
+        href="Asset/Md-Humair-Raza-Resume.pdf"
+        onclick="window.open('https://drive.google.com/file/d/1ptjAIsk7d0Su-wJimx7ttRnJQ0yEJtfC/view?usp=share_link')">Download
         Resume <img src="images/download.png" alt=">" />
       </a>
-    </div>
+    <!-- </div> -->
 
       <div class="hamburger">
         <div></div>
@@ -74,13 +75,13 @@
           SpringBoot, Hibernate, AWS, JavaScript, HTML5 & CSS3.
         </p>
         <!=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=->
-        <div id="resume-button-2">
-          <a id="resume-link-2"
+        <!-- <div id="resume-button-2"> -->
+          <a style="display: none;" id="resume-link-2"
             class="button_style1 resume_button nav-link resume" download="Md-Humair-Raza-Resume.pdf"
             href="Asset/Md-Humair-Raza-Resume.pdf" target="_blank"
             >Download Resume <img src="images/download.png" alt=">" /></a>
 
-        </div>
+        <!-- </div> -->
           <!=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=->
       </div>
       <div class="linkedin">
@@ -364,7 +365,7 @@
   </div>
 
   <div>
-    <div style="width: 71%;"  class="react-activity-calendar calendar">
+    
 
     <!-- this is the div where your calander will apear -->
 
@@ -385,7 +386,8 @@
         alt="" id="github-streak-stats">
     </div>
   </div>
-  </div>
+
+  <div style="width: 71%;"  class="react-activity-calendar calendar"></div>
   
   <br>
   <br>
@@ -490,10 +492,10 @@
       </div>
     </div>
   </footer>
-  <!-- <script>
+  <script>
     GitHubCalendar(".calendar", "mdhumairraza");
     GitHubCalendar(".calendar", "mdhumairraza", { responsive: true });
-  </script> -->
+  </script>
 </body>
 
 <script src="/static/js/main.c05e53dd.chunk.js"></script>
